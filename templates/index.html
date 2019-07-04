@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/addDel.css" />
+    <link
+      type="text/css"
+      href="static/css/jquery.lavalamp.css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <script src="static/js/popper.min.js"></script>
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/socket.io.js"></script>
+    <!-- <script src="js/pygal-tooltips.min.js"></script> -->
+    <script src="static/js/jquery.lavalamp.min.js"></script>
+    <link rel="stylesheet" href="static/css/button.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body class="background">
+    <!-- <h2 id="clientName"></h2> -->
+    <nav>
+      <ul id="default">
+        <li class="active navlinks" id="homelink">Home</li>
+        <li id="accgraphlink" class="navlinks">Accelerometer</li>
+        <li id="gyrographlink" class="navlinks">Gyroscope</li>
+        <li id="tempgraphlink" class="navlinks">Temperature</li>
+        <li id="stats" class="navlinks">Stats</li>
+      </ul>
+    </nav>
+
+    <div id="container">
+      <div id="home">
+        <div class="form-group clientList">
+          <label for="clients"></label>
+          <select class="form-control" id="clients">
+            <option hidden>Select a Client</option>
+          </select>
+        </div>
+
+        <table class="table color" id="sensorData"></table>
+
+        <div id="emptyImg">
+          <img src="static/checked.png" /><img src="static/unchecked.png" />
+          <!-- to cache images,as we can not make req. for them before submitting form-->
+        </div>
+        <div id="option">
+          <div id="chooseColor">
+            Color
+            <input type="color" id="color" />
+          </div>
+          <div id="controller">
+            <button class="small button ">Add switch</button>
+          </div>
+          <table id="switches"></table>
+          <div id="rmBtn">
+            <button class="button small">Remove switch</button>
+          </div>
+          <div id="selAllBtn">
+            <button class="button small">Select All</button>
+          </div>
+          <div id="delBtn">
+            <button class="button small">Delete</button>
+          </div>
+        </div>
+        <!-- <div class="dropdown">
+			<button
+				type="button"
+				class="btn btn-primary dropdown-toggle"
+				data-toggle="dropdown"
+			>
+				Clients
+			</button>
+			<div class="dropdown-menu" id="menu"></div>
+		</div> -->
+        <!-- <form id="form" action="piserver.local:5000/switch/entry"> -->
+        <form id="form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter GPIO"
+              id="gpio"
+            />
+            <div id="gpioError"></div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Device"
+              id="device"
+            />
+            <div id="deviceError"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="cancel" type="button" class="btn btn-primary">
+            Cancel
+          </button>
+        </form>
+      </div>
+      <div id="acc">
+        <embed
+          type="image/svg+xml"
+          src=""
+          id="embedacc"
+          style="max-width: 900px"
+        />
+      </div>
+      <div id="gyro">
+        <embed
+          type="image/svg+xml"
+          src=""
+          id="embedgyro"
+          style="max-width: 900px"
+        />
+      </div>
+      <div id="temp">
+        <embed
+          type="image/svg+xml"
+          src=""
+          id="embedtemp"
+          style="max-width: 900px"
+        />
+      </div>
+      <div id="dataDisplay">
+        <table class="table color">
+          <tr>
+            <th>packets</th>
+            <th>bytes</th>
+          </tr>
+          <tr>
+            <td id="packet"></td>
+            <td id="bytes"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="static/js/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#default").lavalamp({
+          easing: "easeOutBack",
+          duration: 700, // Duration of animation
+          margins: false, // Whether or not to include margins
+          setOnClick: true, // Whether or not to set the new active element on click
+          activeObj: ".active", // Selector for the active element
+          enableHover: true
+        });
+      });
+    </script>
+  </body>
+</html>
