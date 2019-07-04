@@ -1,0 +1,225 @@
+.color {
+	background-color: white;
+	color: black;
+}
+.background {
+	background-image: url("wood-3271749_1920.jpg");
+	background-position: center;
+	background-size: auto;
+}
+.table {
+	margin-top: 100px;
+	margin-left: 200px;
+	width: 270px;
+	opacity: 0.8;
+	border-radius: 25px;
+}
+.table td {
+	border: 0px solid white;
+}
+.table th {
+	border: 0px solid white;
+}
+
+#chooseColor {
+	display: none;
+	border-radius: 25px;
+	background-color: whitesmoke;
+	opacity: 0.8;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+}
+#chooseColor input {
+	margin: 0 10px;
+}
+.bottom2 {
+	border-bottom: 1px solid rgba(0, 0, 255, 1);
+}
+.subtable {
+	border-collapse: separate;
+}
+.subtable td {
+	border-top: 0px solid white;
+	padding: 0;
+}
+.data {
+	text-align: left;
+}
+.left {
+	margin: 0 0 0 20px;
+}
+.hover:hover {
+	font-weight: bold;
+}
+#form {
+	background-color: white;
+	width: 400px;
+	display: none;
+}
+.form-group {
+	padding: 5px 10px;
+	margin-bottom: 0px;
+}
+button[type="submit"] {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+#option {
+	position: absolute;
+	top: 170px;
+	left: 80%;
+}
+#controller,
+#rmBtn,
+#delBtn {
+	margin: 1px 0;
+}
+#switches {
+	border-collapse: separate;
+	border-spacing: 0 4px;
+}
+#switches td {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+#switches td:last-child {
+	border-radius: 0 10px 10px 0;
+	padding-top: 5px;
+}
+
+.right {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.trans {
+	/*  transition: opacity 4s linear ,top 4s linear;*/
+	position: absolute;
+	top: 0;
+	left: 40%;
+	animation-name: jeeel;
+	animation-fill-mode: forwards;
+	animation-duration: 0.4s;
+	animation-iteration-count: 1;
+}
+.cheUnche {
+	display: none;
+	padding: 10px 0;
+}
+.curve {
+	border-radius: 10px 0 0 10px;
+}
+.cheUnche img {
+	width: 30px;
+	cursor: pointer;
+}
+#delBtn,
+#selAllBtn {
+	display: none;
+}
+#emptyImg {
+	display: none;
+}
+.alert {
+	margin-bottom: 0;
+	padding: 10px;
+}
+#clientName {
+	background-color: #007bff;
+	padding: 5px;
+	color: white;
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#default {
+	list-style-type: none;
+	padding: 0;
+	background-color: black;
+}
+.lavalamp-object {
+	background-color: #007bff;
+}
+.navlinks {
+	display: inline-block;
+	color: white;
+	padding: 10px 20px;
+}
+.navlinks:hover {
+	cursor: pointer;
+}
+#container {
+	position: relative;
+	width: 100%;
+}
+#home,
+#acc,
+#gyro,
+#temp,
+#dataDisplay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+#home {
+	z-index: 2;
+}
+#acc,
+#gyro,
+#temp,
+#dataDisplay {
+	display: none;
+}
+
+#cancel {
+	position: relative;
+	left: 225px;
+	margin-bottom: 10px;
+}
+@keyframes jeeel {
+	100% {
+		opacity: 1;
+		top: 100px;
+	}
+}
+.clientList {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@media screen and (max-width: 800px) {
+	.table {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#option {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 450px;
+	}
+	/*
+   #controller,#switches {
+
+    display: inline-block;
+   }
+   #controller {
+    top : 65%;
+   }
+   #switches {
+    top : 75%;
+   }*/
+	#form {
+		width: 270px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+@media screen and (max-width: 510px) {
+	.navlinks {
+		display: block;
+	}
+}
